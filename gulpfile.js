@@ -4,13 +4,8 @@
 */
 
 const path = require('path');
-console.log(path);
-
-
-// const project = 'WPGulpTheme';
 const sassFiles             = 'assets/scss/style.scss';
 const styleDestination      = 'dist/style';
-const url 		            = 'localhost/html/pasveer/pasveernl';
 
 /**
     Load Plugins.
@@ -48,7 +43,7 @@ gulp.task('styles', function(){
         .pipe(sourcemaps.init())
         .pipe( sass({
             errLogToConsole: true,
-            outputStyle: 'compressed', // compressed || nested || expanded
+            outputStyle: 'expanded', // compressed || nested || expanded
             precision: 10
         }))
         .pipe(sourcemaps.write({includeContent: false}))
@@ -65,7 +60,7 @@ gulp.task('styles', function(){
         .pipe(sourcemaps.write (styleDestination))
         .pipe(rename( { suffix: '.min' } ) )
 		.pipe( gulp.dest( styleDestination ) )
-		.pipe(notify( { message: 'TASK: "styles" Completed!', onLast: true }))
+		.pipe(notify( { message: 'TASK Completed!', onLast: true }))
 });
 
 /**
@@ -80,8 +75,7 @@ gulp.task('browser-sync', function(){
     ];
 
     browserSync.init(files, {
-        // server: "./",
-        proxy: "/html/pasveer/pasveernl",
+        server: "./",
         port: 3000,
     })
 });

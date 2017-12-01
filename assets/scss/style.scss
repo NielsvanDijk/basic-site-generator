@@ -1,15 +1,37 @@
 @import 'settings';
-// @import 'mixins/mixins';
 
 * {
     margin: 0;
     padding: 0;
-    font-family: $sans;
 }
 
-@import 'base/header';
-// @import 'base/grid';
-//
-@import 'components/container';
-@import 'components/button';
-// @import 'components/block';
+html {
+    background-color: $secondary;
+
+    animation: 800ms ease 500ms normal none infinite animate;
+    animation-direction: alternate;
+
+    @keyframes animate {
+        0%   {background-color: $secondary;}
+        100%  {background-color: $gold;}
+    }
+}
+
+body {
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
+
+h1 {
+    animation: 800ms ease 500ms normal none infinite animatete;
+    animation-direction: alternate;
+
+    font-size: 88px;
+    font-family: $serif;
+
+    @keyframes animatete {
+        0%   {color: $gold;}
+        100%  {color: $black;}
+    }
+}
