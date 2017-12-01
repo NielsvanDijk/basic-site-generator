@@ -4,7 +4,7 @@
 */
 
 const path = require('path');
-const sassFiles             = 'assets/scss/style.scss';
+const sassFiles             = 'src/scss/style.scss';
 const styleDestination      = 'dist/style';
 
 /**
@@ -18,6 +18,8 @@ const browserSync = require('browser-sync').create();
 const gutil      = require('gulp-util');
 const chalk      = require('chalk');
 // const minifycss  = require('gulp-minify-css');
+
+const { gulpSassError } = require('gulp-sass-error');
 
 // CSS related plugins.
 var sass         = require('gulp-sass'); // Gulp pluign for Sass compilation
@@ -43,9 +45,9 @@ gulp.task('styles', function(){
         .pipe(sourcemaps.init())
         .pipe( sass({
             errLogToConsole: true,
-            outputStyle: 'expanded', // compressed || nested || expanded
+            outputStyle: 'compressed', // compressed || nested || expanded
             precision: 10
-        }))
+        }).on('error', sass.logError))
         .pipe(sourcemaps.write({includeContent: false}))
         .pipe(sourcemaps.init({loadMaps: false}))
         .pipe( autoprefixer(
@@ -82,7 +84,7 @@ gulp.task('browser-sync', function(){
 
 gulp.task('watch', function(){
     gulp.watch('./dist/styles/*.css', ['styles']);
-    gulp.watch("./assets/scss/**/*.scss", ['styles']);
+    gulp.watch("./src/scss/**/*.scss", ['styles']);
     gulp.watch('./dist/style/*.css').on('change', browserSync.reload);
 });
 

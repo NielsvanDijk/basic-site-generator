@@ -6,32 +6,32 @@
 }
 
 html {
-    background-color: $secondary;
 
     animation: 800ms ease 500ms normal none infinite animate;
     animation-direction: alternate;
 
+    background-color: $secondary;
+
     @keyframes animate {
         0%   {background-color: $secondary;}
-        100%  {background-color: $gold;}
+        100%  {background-color: $blue;}
     }
 }
 
 body {
     display: flex;
-    justify-content: center; /* align horizontal */
-    align-items: center; /* align vertical */
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
     animation: 800ms ease 500ms normal none infinite animatete;
     animation-direction: alternate;
-
-    font-size: 88px;
     font-family: $serif;
+    font-size: 88px;
 
     @keyframes animatete {
-        0%   {color: $gold;}
+        0%   {color: $blue;}
         100%  {color: $black;}
     }
 }
