@@ -1,7 +1,7 @@
-# HTML Stichting Pasveerkorpsen Leeuwarden
+# Basic Site generator
 
 Na het downloaden ga je in de terminal naar:  
-`cd /naar-je-folder/pasveer.nl.html`  
+`cd /naar-je-folder`  
 
 Installeer de node_modules:  
 `npm install`
