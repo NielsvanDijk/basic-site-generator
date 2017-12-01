@@ -1,0 +1,61 @@
+header {
+    background: $background;
+    height: 492px;
+
+    .wrapper {
+        position: relative;
+        padding: 202px 0 98px 150px;
+        box-sizing: border-box;
+
+        h1 {
+            display: inline-block;
+            margin-right: 8px;
+            font-family: $serif;
+            font-size: 5em;
+        }
+
+        h2 {
+            display: inline-block;
+            font-size: 3em;
+            font-weight: 300;
+        }
+
+        p {
+            margin-bottom: 20px;
+            margin-left: 26px;
+            color: $text-color-gray;
+            font-size: 1.2em;
+            font-weight: 300;
+
+            &::before {
+                display: block;
+                position: relative;
+                top: 17px;
+                left: -18px;
+                animation: 750ms ease 0ms normal none infinite animate;
+                animation-direction: alternate;
+                border-radius: 10px;
+                background: $secondary;
+                width: 10px;
+                height: 10px;
+                content: '';
+
+                @keyframes animate {
+                    0%   {background-color: $secondary;}
+                    100%  {background-color: $gold;}
+                }
+            }
+        }
+
+        .me {
+            position: absolute;
+            top: 91px;
+            right: 150px;
+            z-index: 0;
+            background: url('../images/Niels-van-Dijk.png') no-repeat;
+            background-size: cover;
+            width: 400px;
+            height: 400px;
+        }
+    }
+}
