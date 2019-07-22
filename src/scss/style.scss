@@ -1,0 +1,37 @@
+@import 'settings';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+
+    animation: 800ms ease 500ms normal none infinite animate;
+    animation-direction: alternate;
+
+    background-color: $secondary;
+
+    @keyframes animate {
+        0%   {background-color: $secondary;}
+        100%  {background-color: $blue;}
+    }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    animation: 800ms ease 500ms normal none infinite animatete;
+    animation-direction: alternate;
+    font-family: $serif;
+    font-size: 88px;
+
+    @keyframes animatete {
+        0%   {color: $blue;}
+        100%  {color: $black;}
+    }
+}
